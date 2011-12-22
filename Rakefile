@@ -1,7 +1,7 @@
 require 'rake'
 require 'erb'
 
-task :default => :install
+task :default => [:install, :vundle]
 
 $replace_all=false
 desc "install the dot files into user's home directory"
@@ -79,7 +79,15 @@ task :command_t do
   end
 end
 
-desc 'Update plugins'
+desc "Clone vim/bundle/vundle"
+task :vundle do
+  unless File.exist?('vim/bundle/vundle')
+  puts "Cloning vim/bundle/vundle"
+  system "git clone https://github.com/gmarik/vundle.git vim/bundle/vundle"
+  end
+end
+
+desc "Update plugins"
 task :update do
   puts "Update plugins"
   Dir['vim/bundle/*'].select{|file| File.ftype(file)=='directory'}.each do |dir|
