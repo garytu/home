@@ -1,0 +1,89 @@
+Xcursor*theme:          Neutral
+
+Xft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            full
+Xft*rgba:               rgb
+
+!colors
+*foreground:    #f2f2f2
+*background:    #101010
+!*cursorColor:   orange
+
+
+! -- Colours -- !
+! Black
+*color0:		#000
+*color8:		#444
+! Red
+*color1:		#944
+*color9:		#c55
+! Green
+*color2:		#684
+*color10:		#8b6
+! Yellow
+*color3:		#874
+*color11:		#ca6
+! Blue
+*color4:		#669
+*color12:		#88c
+! Magenta
+*color5:		#757
+*color13:		#a7a
+! Cyan
+*color6:		#389
+*color14:		#6ab
+! White
+*color7:		#bbb
+*color15:		#eee
+
+!**color0:        #6c6c6c
+!**color1:        #e9897c
+!**color2:        #b6e77d
+!**color3:        #ecebbe
+!**color4:        #a9cdeb
+!**color5:        #ea96eb
+!**color6:        #c9caec
+!**color7:        #f2f2f2
+!**color8:        #747474
+!**color9:        #f99286
+!**color10:       #c3f786
+!**color11:       #fcfbcc
+!**color12:       #b6defb
+!**color13:       #fba1fb
+!**color14:       #d7d9fc
+!**color15:       #e2e2e2
+
+!urxvt settings
+urxvt*backgroundi:	#000
+urxvt*foregroundi:	#bbb
+!urxvt*inheritPixmap:	true
+urxvt*tintColor:	white	
+urxvt*shading:		10
+urxvt*inputMethod:      ibus
+urxvt*geometry:         100x30
+urxvt*saveLines:        100000 
+urxvt*loginShell:       true
+urxvt*internalBorder:   0
+urxvt*termName:         rxvt-unicode
+urxvt*scrollTtyKeypress:true
+urxvt*scrollTtyOutput:  false
+urxvt*scrollBar:        true
+urxvt*scrollBar_right:  true
+urxvt*font:	xft:Droid Sans Mono:pixelsize=15:antialias=true,xft:WenQuanYi Micro Hei Mono Light:pixelsize=15:antialias=true
+
+urxvt.perl-lib:         /usr/lib/urxvt/perl
+URxvt.perl-ext:         default,url-select
+URxvt.perl-ext-common:  default,tabbed,clipboard
+
+URxvt.keysym.M-u:    perl:url-select:select_next
+URxvt.urlLauncher:   firefox
+URxvt.underlineURLs: true
+
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg:    3
+URxvt.tabbed.tab-bg:    0
+
+xterm*faceName:         xft:Droid Sans Mono:pixelsize=15:antialias=true,xft:WenQuanYi Micro Hei Mono Light:pixelsize=15:antialias=true
+

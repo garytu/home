@@ -1,0 +1,6 @@
+[user]
+	email = garytu@gmail.com
+	name = Gary Tu
+
+[core]
+	autocrlf = false

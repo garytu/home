@@ -1,0 +1,2 @@
+#!/bin/sh
+amixer get Master|grep 'Front Left: Playback'|awk {'print $5'}|sed 's/^\[\([0-9]*\)%]/\1/g'

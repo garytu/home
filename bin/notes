@@ -1,0 +1,1 @@
+schroot -p -- /opt/ibm/lotus/notes/notes-wrapper

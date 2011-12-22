@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ ! -n "$WORKDIR" ]; then
+  echo "Please specify DP WORKDIR in environment variable"
+  exit 1
+fi
+srcdir=$WORKDIR/datapower
+tagfile=$WORKDIR/datapower/tags 
+find $srcdir -type f -name *.h | xargs ctags -f $tagfile
+find $srcdir -type f -name *.c | xargs ctags -f $tagfile -a
+find $srcdir -type f -name *.hpp | xargs ctags -f $tagfile -a
+find $srcdir -type f -name *.cpp | xargs ctags -f $tagfile -a
+ctags -a -R -f $tagfile $WORKDIR/_build/i686/datapower/router/mgmt-include/*.hpp
+
+
+

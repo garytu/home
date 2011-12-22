@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+  error "I need a command."
+  exit 1
+fi
+
+if which gksu > /dev/null 2>&1; then
+  echo "gksu $@"
+else
+  echo "xterm -e su $@"
+fi
+
+exit 0

@@ -1,0 +1,3 @@
+/etc/rc.d/agnLogd $1
+/etc/rc.d/agnclientd $1
+

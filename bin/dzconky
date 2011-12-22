@@ -1,0 +1,8 @@
+#!/bin/sh
+
+FG='#bbb'
+BG='#000'
+#FONT='-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*'
+FONT='Droid Sans Fallback:pixelsize=15:weight=bold:antialias=true'
+conky -c ~/.dwm/conkyrc | dzen2 -e - -h 14 -ta r -x 1120 -fg $FG -bg $BG -fn "$FONT" &
+#conky -c ~/.dwm/minimal.conf| dzen2 -e - -h 14 -ta r -x 1120 -bg $BG -fn $FONT &

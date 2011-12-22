@@ -1,0 +1,2 @@
+source ~/.alias
+setopt nocompletealiases

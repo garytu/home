@@ -1,0 +1,7 @@
+vim/bundle/
+vim/_temp/
+.netrwhist
+p4-ibm.zsh
+jmake
+bso
+

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+
+# Check and process input parameter
+if [ -z "$1" ]; then
+  exit 1
+fi
+
+case "$1" in
+mute)
+  ACTION="0%"
+  ;;
+up)
+  ACTION="5%+"
+  ;;
+down)
+  ACTION="5%-"
+  ;;
+esac
+
+if [ -z "$ACTION" ]; then
+  exit 1
+fi
+
+amixer -q set Master "$ACTION"
+

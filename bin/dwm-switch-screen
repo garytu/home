@@ -1,0 +1,3 @@
+#!/bin/sh
+disper --cycle-stages="-e:-c:-s" -C >> /tmp/test.log 2>&1
+

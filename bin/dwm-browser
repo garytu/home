@@ -1,0 +1,10 @@
+#!/bin/sh
+case "$1" in
+tor)
+  chromium --proxy-server="socks://localhost:9050"
+  ;;
+*)
+  chromium
+esac
+
+

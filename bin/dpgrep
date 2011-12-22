@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+USAGE="usage: '`basename $0`' [-hcsxm] match-str
+  -h: header
+  "
+function print_usage() {
+  echo "Usage: `basename $0` [-hcsxm] match-str"
+  echo "  -h: h/hpp files"
+  echo "  -c: c/cpp files"
+  echo "  -s: xsl files"
+  echo "  -x: xml files"
+  echo "  -m: Makefile"
+  echo "  -j: JS files"
+}
+
+if [ ! -n "$WORKDIR" ]; then
+  echo "Please specify DataPower \$WORKDIR" 
+  exit -1
+fi
+if [ ! -n "$DPARCH" ]; then
+  echo "Please specify env variable \$DPARCH" 
+  exit -1
+fi
+if [ $# -lt 2 ]; then
+  print_usage
+  exit -1
+fi
+
+header=0
+c=0
+xsl=0
+xml=0
+makefile=0
+js=0
+while [[ ${1:0:1} = '-' ]] ; do
+  N=1
+  L=${#1}
+  while [[ $N -lt $L ]] ; do
+    case ${1:$N:1} in
+       'h') header=1 ;;
+       'c') c=1 ;;
+       's') xsl=1 ;;
+       'x') xml=1 ;;
+       'm') makefile=1;;
+       'j') js=1;;
+       *)   print_usage
+            exit 1 ;;
+    esac
+    N=$(($N+1))
+  done
+  shift
+done
+if [[ ! -n ${1} ]] ; then
+  print_usage
+  exit 1
+fi
+
+FINDCMD='find $WORKDIR/datapower -type f'
+if [[ $header == 1 ]]; then
+  find $WORKDIR/datapower -type f -name *.h -o -name *.hpp | xargs grep -n --color $1
+  grep -n --color $1 $WORKDIR/_build/$DPARCH/datapower/router/mgmt-include/*
+fi 
+if [[ $c == 1 ]]; then
+  find $WORKDIR/datapower -type f -name *.c -o -name *.cpp | xargs grep -n --color $1
+fi
+if [[ $xsl == 1 ]]; then
+  find $WORKDIR/datapower -type f -name *.xsl | xargs grep -n --color $1
+fi
+if [[ $xml == 1 ]]; then
+  find $WORKDIR/datapower -type f -name *.xml | sed 's/\ /\\\ /g' | xargs grep -n --color $1
+fi
+if [[ $makefile == 1 ]]; then
+  find $WORKDIR/datapower -type f -regex .*Makefile.* | xargs grep -n --color $1
+fi
+if [[ $js == 1 ]]; then
+  find $WORKDIR/datapower -type f -name *.js | xargs grep -n --color $1
+fi
+

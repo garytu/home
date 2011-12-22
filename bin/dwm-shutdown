@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# Check and process input parameter
+if [ -z "$1" ]; then
+#  error "You must specify an action (poweroff, reboot)."
+  exit 1
+fi
+
+case "$1" in
+poweroff)
+  ACTION="shutdown computer"
+  COMMAND="poweroff"
+  ;;
+reboot)
+  ACTION="reboot computer"
+  COMMAND="reboot"
+  ;;
+*)
+  ACTION=""
+  COMMAND=""
+esac
+
+if [ -z "$ACTION" ]; then
+#  msg "error: Unknown action '$1'."
+  exit 1
+fi
+
+# Build menu options and launch menu
+MENU="Are you sure you want to $ACTION?
+yes
+no"
+
+R=`echo "$MENU" | dmenu | tr '[:lower:]' '[:upper:]'`
+
+# If answer is not YES then cancel action
+if [ "$R" != "YES" ]; then
+#  msg "-------------- ACTION CANCELLED --------------"
+  exit 0
+fi
+
+# Finish executing action
+exec `dwm-sudo "$COMMAND"`
+exit $?

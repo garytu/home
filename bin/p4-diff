@@ -1,0 +1,4 @@
+#!/bin/sh
+export P4DIFF='diff -ub'
+p4 diff "$@" | colordiff | less -Rf
+

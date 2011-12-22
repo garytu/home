@@ -1,0 +1,4 @@
+#!/bin/sh
+pkill -f dwm-statusbar
+exec dwm-statusbar &
+

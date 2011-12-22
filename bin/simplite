@@ -1,0 +1,3 @@
+#!/bin/sh
+
+env WINEPREFIX="/home/garytu/.wine" wine C:\\windows\\command\\start.exe /Unix /home/garytu/.wine/dosdevices/c:/users/garytu/Start\ Menu/Programs/Secway/Simp\ Lite\ for\ MSN\ Messenger/SimpLite\ for\ MSN\ Messenger.lnk

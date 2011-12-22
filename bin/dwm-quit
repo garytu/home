@@ -1,0 +1,16 @@
+#!/bin/sh
+MENU="Are you sure you want to exit dwm?
+yes
+no"
+
+R=`echo "$MENU" | dmenu | tr '[:lower:]' '[:upper:]'`
+
+# If answer is not YES then cancel action
+if [ "$R" != "YES" ]; then
+  exit 0
+fi
+
+# Finish executing action
+exec `killall startdwm`
+exit $?
+

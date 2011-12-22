@@ -1,0 +1,8 @@
+alias -- -='cd -'
+alias ls='ls -h --color=auto'
+alias ll='ls -l'
+alias la='ls -lA'
+alias lt='ls -ltr'
+alias mv='mv -i'
+alias rm='rm -i'
+alias RM='rm -vrf'

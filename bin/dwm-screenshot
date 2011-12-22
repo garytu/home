@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xwd -root | xwdtopnm | pnmtopng > "/tmp/screenshot-`date +%Y%m%d-%H.%M.%S.png`"

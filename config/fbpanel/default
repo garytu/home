@@ -1,0 +1,77 @@
+Global {
+    edge = top
+    allign = left
+    margin = 1000
+    widthtype = request
+    width = 200
+    height = 15
+    transparent = true
+    tintcolor = #ffffff
+    alpha = 0
+    setdocktype = true
+    setpartialstrut = false
+    autohide = false
+    heightWhenHidden = 1
+    roundcorners = true
+    roundcornersradius = 0
+    layer = above
+    setlayer = false
+    maxelemheight = 0
+}
+# Plugin {
+#     type = menu
+#     config {
+#         IconSize = 22
+#         icon = logo
+#         systemmenu {
+#         }
+#         separator {
+#         }
+#         menu {
+#             name = Computer
+#             icon = computer
+#             item {
+#                 name = Terminal
+#                 icon = terminal
+#                 action = urxvt
+#             }
+#             item {
+#                 name = Lock Display
+#                 icon = gnome-lockscreen
+#                 action = slock
+#             }
+#             separator {
+#             }
+#             item {
+#                 name = Reboot
+#                 icon = gnome-session-reboot
+#                 action = sudo reboot
+#             }
+#             item {
+#                 name = Shutdown
+#                 icon = gnome-session-halt
+#                 action = sudo shutdown -h now
+#             }
+#             item {
+#                 name = logout
+#                 icon = gnome-session-logout
+#                 action = killall dwm
+#             }
+#         }
+#     }
+# }
+plugin {
+    type = tclock
+    config {
+        TooltipFmt = %A %x
+        ShowCalendar = true
+        ShowTooltip = true
+    }
+}
+plugin {
+    type = tray
+    expand = true
+    padding = 4
+    config {
+    }
+}

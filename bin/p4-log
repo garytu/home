@@ -1,0 +1,3 @@
+#!/bin/sh
+exec p4 changes -l "$@" | less
+

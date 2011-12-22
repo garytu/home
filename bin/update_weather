@@ -1,0 +1,22 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+from urllib.request import urlopen
+from lxml import etree
+from io import StringIO
+
+# 台北
+url = 'http://www.cwb.gov.tw/rss/forecast/36_01.xml'
+outfile = '/home/garytu/.dwm/status/weather'
+
+fp = urlopen(url) 
+content = fp.read()#.decode('utf8')
+tree = etree.XML(content)
+r = tree.xpath('/rss/channel/item/description')
+items = r[0].text.strip().split()
+temperature = (int(items[3]) + int(items[5]))/2
+data = '%s,%.1f°,%s' % (items[1], temperature, items[7])
+data = data.encode('utf8')
+f = open(outfile, 'wb')
+f.write(data)
+f.close()
+

@@ -1,0 +1,7 @@
+[ui]
+username = Gary Tu <garytu@gmail.com>
+
+[extensions]
+hgk=
+hgext.mq =
+
