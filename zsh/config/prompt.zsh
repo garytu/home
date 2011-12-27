@@ -19,6 +19,7 @@ zstyle ':vcs_info:*' unstagedstr   '%B%F{yellow}!%f%b'
 zstyle ':vcs_info:*' formats       '%c%u%b%m '
 zstyle ':vcs_info:*' actionformats '%c%u%b%m %B%s-%a%%b '
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked git-aheadbehind git-remotebranch
+zstyle ':vcs_info:*' enable git svn
 
 ### git: Show marker (T) if there are untracked files in repository
 # Make sure you have added staged to your 'formats':  %c

@@ -4,3 +4,8 @@
 
 [core]
 	autocrlf = false
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1240x1174+2+20
+	main-window-view = FileView
+	history-view-vpane-position = 843

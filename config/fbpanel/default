@@ -18,48 +18,48 @@ Global {
     setlayer = false
     maxelemheight = 0
 }
-# Plugin {
-#     type = menu
-#     config {
-#         IconSize = 22
-#         icon = logo
-#         systemmenu {
-#         }
-#         separator {
-#         }
-#         menu {
-#             name = Computer
-#             icon = computer
-#             item {
-#                 name = Terminal
-#                 icon = terminal
-#                 action = urxvt
-#             }
-#             item {
-#                 name = Lock Display
-#                 icon = gnome-lockscreen
-#                 action = slock
-#             }
-#             separator {
-#             }
-#             item {
-#                 name = Reboot
-#                 icon = gnome-session-reboot
-#                 action = sudo reboot
-#             }
-#             item {
-#                 name = Shutdown
-#                 icon = gnome-session-halt
-#                 action = sudo shutdown -h now
-#             }
-#             item {
-#                 name = logout
-#                 icon = gnome-session-logout
-#                 action = killall dwm
-#             }
-#         }
-#     }
-# }
+ Plugin {
+     type = menu
+     config {
+         IconSize = 22
+         icon = logo
+         systemmenu {
+         }
+         separator {
+         }
+         menu {
+             name = Computer
+             icon = computer
+             item {
+                 name = Terminal
+                 icon = terminal
+                 action = urxvt
+             }
+             item {
+                 name = Lock Display
+                 icon = gnome-lockscreen
+                 action = slock
+             }
+             separator {
+             }
+             item {
+                 name = Reboot
+                 icon = gnome-session-reboot
+                 action = sudo reboot
+             }
+             item {
+                 name = Shutdown
+                 icon = gnome-session-halt
+                 action = sudo shutdown -h now
+             }
+             item {
+                 name = logout
+                 icon = gnome-session-logout
+                 action = killall dwm
+             }
+         }
+     }
+ }
 plugin {
     type = tclock
     config {

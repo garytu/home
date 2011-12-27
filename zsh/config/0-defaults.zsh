@@ -1,6 +1,6 @@
 # Lines configured by zsh-newuser-install
-bindkey -e
-setopt nomatch notify
+bindkey -v
+#setopt nomatch notify
 # End of lines configured by zsh-newuser-install
 
 # The following lines were added by compinstall

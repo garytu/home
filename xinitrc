@@ -49,7 +49,7 @@ xscreensaver -no-splash &
 while true; do
   fbpanel &
   statusbar
-  dwm
+  ~/app/suckless/bin/dwm > ~/.dwm.log 2>&1
   xmessage 'INSERT COIN TO CONTINUE' \
   -buttons 'Insert Coin:0,Game Over' \
   -default 'Insert Coin' -timeout 30 \

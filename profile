@@ -1,4 +1,3 @@
-
 PATH=$HOME/bin:$PATH
 
 export BROWSER=chromium
