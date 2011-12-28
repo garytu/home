@@ -4,9 +4,9 @@
 sed -n '/^sed/,$p' "$0" | sed 1d | ck-launch-session sh -x; exit
 
 # appearance
-xset +fp /usr/share/fonts/artwiz-fonts
-xset +fp /usr/share/fonts/local
-xset fp rehash
+#xset +fp /usr/share/fonts/artwiz-fonts
+#xset +fp /usr/share/fonts/local
+#xset fp rehash
 
 xmodmap ~/.Xmodmap
 xrdb ~/.Xresources
@@ -47,8 +47,8 @@ xscreensaver -no-splash &
 
 # window manager
 while true; do
-  fbpanel &
   statusbar
+  fbpanel & 
   ~/app/suckless/bin/dwm > ~/.dwm.log 2>&1
   xmessage 'INSERT COIN TO CONTINUE' \
   -buttons 'Insert Coin:0,Game Over' \

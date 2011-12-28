@@ -1,0 +1,15 @@
+#!/bin/sh
+killall trayer
+exec trayer \
+  --widthtype request \
+  --height 17 \
+  --edge top \
+  --align left \
+  --transparent true --alpha 255 \
+  --SetPartialStrut true \
+  --expand true \
+  --margin 960 \
+  --SetDockType true \
+  "$@" &
+
+
