@@ -1,14 +1,25 @@
 #!/bin/sh
 killall trayer
+#exec trayer \
+#  --widthtype request \
+#  --height 16 \
+#  --edge top \
+#  --align left \
+#  --transparent true --alpha 0 \
+#  --SetPartialStrut true \
+#  --expand true \
+#  --margin 960 \
+#  --SetDockType true \
+#  "$@" &
+
 exec trayer \
   --widthtype request \
-  --height 17 \
+  --height 16 \
   --edge top \
   --align left \
+  --margin 1000 \
   --transparent true --alpha 255 \
-  --SetPartialStrut true \
   --expand true \
-  --margin 960 \
   --SetDockType true \
   "$@" &
 

@@ -60,14 +60,14 @@ Plugin {
         }
     }
 }
-#plugin {
-#   type = tclock
-#   config {
-#       tooltipfmt = %a %x
-#       showcalendar = true
-#       showtooltip = true
-#   }
-#}
+plugin {
+   type = tclock
+   config {
+       tooltipfmt = %a %x
+       showcalendar = true
+      showtooltip = true
+   }
+}
 plugin {
    type = tray
    expand = true

@@ -40,6 +40,8 @@ feh --bg-scale ~/Pictures/Wallpapers/28.jpg &
 # screen saver
 xscreensaver -no-splash &
 
+dropboxd &
+
 # music
 #mpc || mpd &
 #sonata &
@@ -48,13 +50,12 @@ xscreensaver -no-splash &
 # window manager
 while true; do
   statusbar
-  fbpanel & 
+  systrayer 
   ~/app/suckless/bin/dwm > ~/.dwm.log 2>&1
   xmessage 'INSERT COIN TO CONTINUE' \
   -buttons 'Insert Coin:0,Game Over' \
   -default 'Insert Coin' -timeout 30 \
   -center || break
-  killall fbpanel
 done
 
 # clean up
