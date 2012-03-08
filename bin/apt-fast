@@ -1,0 +1,65 @@
+#!/bin/sh
+# Last Change: 2011/10/06
+# apt-fast v0.02 by Matt Parnell http://www.mattparnell.com, this thing is fully open-source
+# if you do anything cool with it, let me know so I can publish or host it for you
+# contact me at admin@mattparnell.com
+# Special thanks to Travis/travisn000 from the PCLinux Forums for making improvements that allow
+# for more complex apt-get commands. See the thread: http://www.pclinuxos.com/forum/index.php/topic,66385.0.html
+# adicionar suporte aos metalinks no aria2: http://ubuntuforums.org/showthread.php?t=1493421
+# veja também apt-metalink: http://github.com/tatsuhiro-t/apt-metalink
+
+# apt-metalink allows you to download deb packages from several sources
+# concurrently and makes apt-get (dist-)upgrade process faster if you have fast
+# internet connection. apt-metalink uses python-apt to interface apt
+# infrastructure and aria2 as download back-end. Metalink is used to
+# feed package list to aria2.
+
+# neste site você encontra uma versão com suporte a proxy
+# http://www.mattparnell.com/linux/apt-fast/apt-fast%20modded/
+
+# este link parece ter algumas novidades sobre o apt-fast
+# http://sourceforge.net/apps/phpbb/aria2/viewtopic.php?f=1&t=52
+
+# parece que vai surgir um novo programa chamado apt-metalink
+# https://github.com/tatsuhiro-t/apt-metalink
+
+# script editado por Sérgio Luiz Araújo Silva
+# esta versão do apt-fast usa o aria2 ao invés do axel, fica bem mais rápido
+# site: vivaotux.blogspot.com
+# download: sudo wget -c http://ur1.ca/02k16 -O /usr/bin/apt-fast && sudo chmod +x /usr/bin/apt-fast
+
+## Modified by Alexi "Lord Axraz" Yan to use with aria2c, a more stable downloader. Please install aria2 to use this script.
+# Use this just like apt-get for faster package downloading. Make sure to have axel installed.
+
+# mais uma referência sobre como criar um lock-file para permitir
+# somente uma instância do apt-fast
+# http://www.franzone.com/2007/09/23/how-can-i-tell-if-my-bash-script-is-already-running/
+
+# apt-fast with proxy:
+# aria2c -s 20 -j 10 --http-proxy=http://username:password@proxy_ip:proxy_port -i apt-fast.list
+
+[ "`whoami`" = root ] || exec sudo "$0" "$@"
+
+which aria2c &>/dev/null || apt-get install aria2 -y --force-yes
+
+# If the user entered arguments contain upgrade, install, or dist-upgrade
+if echo "$@" | grep -q "upgrade\|install\|dist-upgrade"; then
+  echo "Working...";
+
+  # Go into the directory apt-get normally puts downloaded packages
+  cd /var/cache/apt/archives/;
+
+  # Have apt-get print the information, including the URI's to the packages
+  # Strip out the URI's, and download the packages with Aria2 for speediness
+  # I found this regex elsewhere, showing how to manually strip package URI's you may need...thanks to whoever wrote it
+  apt-get -y --print-uris $@ | egrep -o -e "(ht|f)tp://[^\']+" > /tmp/apt-fast.list;
+  aria2c -c -j5 --input-file=/tmp/apt-fast.list --connect-timeout=600 --timeout=600 -m0;
+  
+  # Perform the user's requested action via apt-get
+  apt-get $@ -y;
+
+  echo -e "\nDone! Verify that all packages were installed successfully. If errors are found, run apt-get clean as root and try again using apt-get directly.\n";
+
+else
+   apt-get $@;
+fi

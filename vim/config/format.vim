@@ -3,11 +3,11 @@ set nowrap
 " backspace through everything in insert mode
 set backspace=indent,eol,start
 
-set tabstop=2
-set softtabstop=2
+set tabstop=4
+set softtabstop=4
 
 " default shift width for indents
-set shiftwidth=2
+set shiftwidth=4
 " make tabs into spaces
 set expandtab
 " smart tab levels
