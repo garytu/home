@@ -6,11 +6,11 @@ if [ ! -n "$WORKDIR" ]; then
 fi
 srcdir=$WORKDIR/datapower
 tagfile=$WORKDIR/datapower/tags 
-find $srcdir -type f -name *.h | xargs ctags -f $tagfile
-find $srcdir -type f -name *.c | xargs ctags -f $tagfile -a
-find $srcdir -type f -name *.hpp | xargs ctags -f $tagfile -a
-find $srcdir -type f -name *.cpp | xargs ctags -f $tagfile -a
-ctags -a -R -f $tagfile $WORKDIR/_build/i686/datapower/router/mgmt-include/*.hpp
+find $srcdir -type f -name \*.h | xargs ctags -f $tagfile --extra=+f
+find $srcdir -type f -name \*.c | xargs ctags -f $tagfile -a --extra=+f
+find $srcdir -type f -name \*.hpp | xargs ctags -f $tagfile -a --extra=+f
+find $srcdir -type f -name \*.cpp | xargs ctags -f $tagfile -a --extra=+f
+ctags -a -R -f $tagfile $WORKDIR/_build/i686/datapower/router/mgmt-include/*.hpp --extra=+f
 
 
 

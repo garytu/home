@@ -68,16 +68,19 @@ urxvt*internalBorder:   0
 urxvt*termName:         rxvt-unicode
 urxvt*scrollTtyKeypress:true
 urxvt*scrollTtyOutput:  false
-urxvt*scrollBar:        true
+urxvt*scrollBar:        false
 urxvt*scrollBar_right:  true
-urxvt*font:	xft:Droid Sans Mono:pixelsize=15:antialias=true,xft:WenQuanYi Micro Hei Mono Light:pixelsize=15:antialias=true
+urxvt*font:	xft:DejaVu Sans Mono:pixelsize=15:antialias=true,xft:WenQuanYi Micro Hei Mono Light:pixelsize=15:antialias=true
 
 urxvt.perl-lib:         /usr/lib/urxvt/perl
 URxvt.perl-ext:         default,url-select
-URxvt.perl-ext-common:  default,tabbed,clipboard
+!URxvt.perl-ext-common:  default,tabbed,clipboard
+URxvt.perl-ext-common:  default,clipboard
+
+!URxvt.keysym.M-v:    perl:clipboard:paste
 
 URxvt.keysym.M-u:    perl:url-select:select_next
-URxvt.urlLauncher:   firefox
+URxvt.urlLauncher:   google-chrome
 URxvt.underlineURLs: true
 
 URxvt.tabbed.tabbar-fg: 2
@@ -85,5 +88,5 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg:    3
 URxvt.tabbed.tab-bg:    0
 
-xterm*faceName:         xft:Droid Sans Mono:pixelsize=15:antialias=true,xft:WenQuanYi Micro Hei Mono Light:pixelsize=15:antialias=true
+xterm*faceName:         xft:DejaVu Sans Mono:pixelsize=15:antialias=true,xft:WenQuanYi Micro Hei Mono Light:pixelsize=15:antialias=true
 

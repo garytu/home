@@ -32,7 +32,13 @@ xsl=0
 xml=0
 makefile=0
 js=0
+ext=0
 while [[ ${1:0:1} = '-' ]] ; do
+  if [[ ${1:1:2} = 'e=' ]] ; then
+    ext=${1:3}
+    shift
+    continue
+  fi 
   N=1
   L=${#1}
   while [[ $N -lt $L ]] ; do
@@ -57,22 +63,25 @@ fi
 
 FINDCMD='find $WORKDIR/datapower -type f'
 if [[ $header == 1 ]]; then
-  find $WORKDIR/datapower -type f -name *.h -o -name *.hpp | xargs grep -n --color $1
+  find $WORKDIR/datapower -type f -name \*.h -o -name \*.hpp | xargs grep -n --color $1
   grep -n --color $1 $WORKDIR/_build/$DPARCH/datapower/router/mgmt-include/*
 fi 
 if [[ $c == 1 ]]; then
-  find $WORKDIR/datapower -type f -name *.c -o -name *.cpp | xargs grep -n --color $1
+  find $WORKDIR/datapower -type f -name \*.c -o -name \*.cpp | xargs grep -n --color $1
 fi
 if [[ $xsl == 1 ]]; then
-  find $WORKDIR/datapower -type f -name *.xsl | xargs grep -n --color $1
+  find $WORKDIR/datapower -type f -name \*.xsl | xargs grep -n --color $1
 fi
 if [[ $xml == 1 ]]; then
-  find $WORKDIR/datapower -type f -name *.xml | sed 's/\ /\\\ /g' | xargs grep -n --color $1
+  find $WORKDIR/datapower -type f -name \*.xml | sed 's/\ /\\\ /g' | xargs grep -n --color $1
 fi
 if [[ $makefile == 1 ]]; then
-  find $WORKDIR/datapower -type f -regex .*Makefile.* | xargs grep -n --color $1
+  find $WORKDIR/datapower -type f -regex .\*Makefile.\* | xargs grep -n --color $1
 fi
 if [[ $js == 1 ]]; then
-  find $WORKDIR/datapower -type f -name *.js | xargs grep -n --color $1
+  find $WORKDIR/datapower -type f -name \*.js | xargs grep -n --color $1
+fi
+if [[ $ext != 0 ]]; then
+  find $WORKDIR/datapower -type f -name \*.${ext} | xargs grep -n --color $1
 fi
 

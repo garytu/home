@@ -6,14 +6,16 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle "vundle"
 Bundle "mrtazz/molokai.vim"
-"Bundle "jammy.vim"
+Bundle "jammy.vim"
 Bundle "xoria256.vim"
-colorscheme molokai 
+Bundle "eclm_wombat.vim"
+colorscheme eclm_wombat 
 Bundle "mileszs/ack.vim"
 Bundle "tpope/vim-fugitive"
 Bundle "wincent/Command-T"
 Bundle "genutils"
 Bundle "The-NERD-tree"
+Bundle "python.vim--Vasiliev"
 
 " delegate configurations to files in .vim/config
 runtime! config/**/*.vim
