@@ -27,4 +27,3 @@ export P4DIFF="diff -u"
 if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -22,6 +22,7 @@ eval `dbus-launch --sh-syntax --exit-with-session`
 # network
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nm-applet --sm-disable &
+#wicd-client &
 
 # touchpad
 # http://wiki.archlinux.org/index.php/Touchpad_Synaptics
@@ -60,4 +61,5 @@ done
 
 # clean up
 killall nm-applet
+#killall wicd-client
 killall gnome-keyring-daemon chromium

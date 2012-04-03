@@ -13,6 +13,7 @@ END {
   ICON_COLOR = '#8cd0d3' # Zenburn Number
 
   StatusBar.new [
+    IP.new(refresh: 60),
     Volume.new(mixer: 'Master'),
     #Music.new(refresh: 15),
     Weather.new(refresh: 60*5, location: 'Taipei'),
@@ -188,5 +189,18 @@ class Weather < StatusBarlet
 
   def to_celsius(f)
     ((f-32)*(5.0/9)).to_i
+  end
+end
+
+class IP < StatusBarlet
+  def label
+    ip = `ifconfig eth0 | grep inet\\\  | awk {'print $2'}`
+    puts ip
+    if not ip
+      ip = `ifconfig wlan0 | grep inet\\\  | awk {'print $2'}`
+    end
+    [:net_wired, ip,  {
+      1 => "xterm -name DIALOG -e ifconfig",
+    }]
   end
 end
