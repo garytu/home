@@ -14,7 +14,7 @@ killall trayer
 
 exec trayer \
   --widthtype request \
-  --height 16 \
+  --height 18 \
   --edge top \
   --align left \
   --margin 1000 \

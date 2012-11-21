@@ -1,7 +1,7 @@
 [ -z "$PS1" ] && return
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
-export EDITOR=vi
+export EDITOR=vim
 
 alias wine32="env WINEARCH=win32 WINEPREFIX=~/.wine32 wine"
 alias winetricks32="env WINEARCH=win32 WINEPREFIX=~/.wine32 winetricks"

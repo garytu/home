@@ -6,8 +6,8 @@ Xft*hinting:            full
 Xft*rgba:               rgb
 
 !colors
-*foreground:    #f2f2f2
-*background:    #101010
+!*foreground:    #f2f2f2
+!*background:    #101010
 !*cursorColor:   orange
 
 
@@ -55,8 +55,8 @@ Xft*rgba:               rgb
 !**color15:       #e2e2e2
 
 !urxvt settings
-urxvt*backgroundi:	#000
-urxvt*foregroundi:	#bbb
+urxvt*background:	#000
+urxvt*foreground:	#bbb
 !urxvt*inheritPixmap:	true
 urxvt*tintColor:	white	
 urxvt*shading:		10
@@ -70,7 +70,7 @@ urxvt*scrollTtyKeypress:true
 urxvt*scrollTtyOutput:  false
 urxvt*scrollBar:        false
 urxvt*scrollBar_right:  true
-urxvt*font:	xft:DejaVu Sans Mono:pixelsize=15:antialias=true,xft:WenQuanYi Micro Hei Mono Light:pixelsize=15:antialias=true
+urxvt*font:	xft:DejaVu Sans Mono:pixelsize=15:antialias=true,xft:WenQuanYi Micro Hei Mono :pixelsize=15:antialias=true
 
 urxvt.perl-lib:         /usr/lib/urxvt/perl
 URxvt.perl-ext:         default,url-select
@@ -88,5 +88,5 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg:    3
 URxvt.tabbed.tab-bg:    0
 
-xterm*faceName:         xft:DejaVu Sans Mono:pixelsize=15:antialias=true,xft:WenQuanYi Micro Hei Mono Light:pixelsize=15:antialias=true
+xterm*faceName:         xft:DejaVu Sans Mono:pixelsize=15:antialias=true,xft:WenQuanYi Micro Hei Mono :pixelsize=15:antialias=true
 
