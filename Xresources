@@ -73,14 +73,14 @@ urxvt*scrollBar_right:  true
 urxvt*font:	xft:DejaVu Sans Mono:pixelsize=15:antialias=true,xft:WenQuanYi Micro Hei Mono :pixelsize=15:antialias=true
 
 urxvt.perl-lib:         /usr/lib/urxvt/perl
-URxvt.perl-ext:         default,url-select
+URxvt.perl-ext:         default,url-picker
 !URxvt.perl-ext-common:  default,tabbed,clipboard
 URxvt.perl-ext-common:  default,clipboard
 
-!URxvt.keysym.M-v:    perl:clipboard:paste
+URxvt.keysym.M-v:    perl:clipboard:paste
 
-URxvt.keysym.M-u:    perl:url-select:select_next
-URxvt.urlLauncher:   google-chrome
+URxvt.keysym.M-u:    perl:url-picker
+URxvt.urlLauncher:   chromium 
 URxvt.underlineURLs: true
 
 URxvt.tabbed.tabbar-fg: 2

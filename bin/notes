@@ -1,1 +1,5 @@
-schroot -p -- /opt/ibm/lotus/notes/notes-wrapper
+
+SESSION=$(schroot -b -c notes)
+
+schroot -r -c $SESSION -- /opt/ibm/lotus/notes/notes-wrapper
+schroot -e -c $SESSION

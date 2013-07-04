@@ -1,0 +1,9 @@
+#!/bin/sh
+
+sort=rate
+if [ -e "$1" ]
+then
+    sort = $1
+fi
+
+sudo reflector --verbose -l 5 --sort ${sort} -c "Taiwan, Province of China" --save /etc/pacman.d/mirrorlist
