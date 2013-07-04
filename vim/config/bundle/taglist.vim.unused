@@ -7,3 +7,5 @@ let Tlist_Use_SingleClick = 1
 
 nnoremap <Leader>] :TlistToggle<Enter>
 nnoremap <Leader>} :TlistShowPrototype<Enter>
+nnoremap <Leader>]n :tn<CR>
+nnoremap <Leader>]p :tp<CR>

@@ -1,4 +1,0 @@
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
-let g:CommandTMaxHeight=10
-

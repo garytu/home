@@ -6,6 +6,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+nnoremap + <c-w>+
+nnoremap - <c-w>-
+nnoremap < <c-w><
+nnoremap > <c-w>>
 
 " Maximize window
 nnoremap <c-w><c-o> :call MaximizeToggle()<CR>

@@ -7,5 +7,6 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79 autoind
 au FileType python set omnifunc=pythoncomplete#Complete
 
 au FileType ruby set softtabstop=2 tabstop=2 shiftwidth=2 textwidth=79 autoindent expandtab
+au FileType vim set softtabstop=2 tabstop=2 shiftwidth=2 textwidth=79 autoindent expandtab
 au FileType xslt set expandtab
 au FileType xml set expandtab
